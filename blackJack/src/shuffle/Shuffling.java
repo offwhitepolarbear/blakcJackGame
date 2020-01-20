@@ -8,7 +8,6 @@ import numberPicker.NumberPicker;
 public class Shuffling {
 	
 	public static ArrayList<Card> shuffling(ArrayList<Card> deck){
-		
 		ArrayList<Integer> shuffleIndex = shufflingIndexing(deck.size());
 		
 		ArrayList<Card> shuffledDeck = new ArrayList<Card>();
@@ -18,15 +17,19 @@ public class Shuffling {
 		}
 		
 		return shuffledDeck;
+	
+	
 	}
 	
 	public static ArrayList<Integer> shufflingIndexing(int deckSize){
-		
+
 		ArrayList<Integer> shuffleIndex = new ArrayList<Integer>();
 		
 		while(shuffleIndex.size()<deckSize) {
 			int randomlyPickedNumber = NumberPicker.randomNumberPicker(deckSize);
-			NumberPicker.pickNumberChecker(randomlyPickedNumber, shuffleIndex);
+			if(!NumberPicker.isAlreadyPickedNumber(randomlyPickedNumber, shuffleIndex)) {
+				shuffleIndex.add(randomlyPickedNumber);
+			}
 		}
 		
 		return shuffleIndex;

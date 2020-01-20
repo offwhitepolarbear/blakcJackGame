@@ -6,7 +6,7 @@ import card.Card;
 
 public class DeckMaker {
 
-	public static ArrayList<Card> deckMaker(String pattern) {
+	public static ArrayList<Card> deckMaker() {
 		
 		ArrayList<Card> spadeSet = PatternSetMaker.patternSetMaker("spade");
 		ArrayList<Card> heartSet = PatternSetMaker.patternSetMaker("heart");

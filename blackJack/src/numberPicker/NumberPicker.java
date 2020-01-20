@@ -7,26 +7,18 @@ public class NumberPicker {
 	public static int randomNumberPicker(int range) {
 		int pick = 0;
 		pick = (int) (Math.random() * range);
-
-		if (pick == 0) {
-			pick = randomNumberPicker(range);
-		}
 		return pick;
 	}
 	
-	public static int pickNumberChecker(int numberRange, ArrayList<Integer> alredyNumberList) {
-		int pick = 0;
-
-		pick = randomNumberPicker(numberRange);
-
+	public static boolean isAlreadyPickedNumber(int pick, ArrayList<Integer> alredyNumberList) {
+		boolean isAlreadyPicked = false;
 		for (int alreadyNumbering : alredyNumberList) {
 			if (pick == alreadyNumbering) {
-				pick = pickNumberChecker(numberRange, alredyNumberList);
+				isAlreadyPicked=true;
+				break;
 			}
 		}
-
-		alredyNumberList.add(pick);
-		return pick;
+		return isAlreadyPicked;
 	}
 
 }

@@ -6,7 +6,7 @@ import card.Card;
 
 public class PointCalculator {
 	
-	public static int pointCalculating(ArrayList<Card> cardsInHand, Card nextCard) {
+	public static int pointCalculating(ArrayList<Card> cardsInHand) {
 		
 		int pointResult=0;
 		int aceCounter=0;
@@ -23,11 +23,9 @@ public class PointCalculator {
 		}
 		
 		else {
-			while(pointResult>21) {
-				while(aceCounter>0) {
-					pointResult -= 10;
-					aceCounter--;
-				}
+			while(pointResult>21 && aceCounter>0) {
+				pointResult -= 10;
+				aceCounter--;
 			}
 			return pointResult;
 		}
