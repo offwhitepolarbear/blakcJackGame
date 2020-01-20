@@ -14,18 +14,12 @@ import shuffle.Shuffling;
 public class Starter {
 
 	public static void main(String[] args) {
-		int startWithTwoCard =2;
 		ArrayList<Card> cardDeck = DeckMaker.deckMaker();
 		
 		cardDeck = Shuffling.shuffling(cardDeck);
 		
-		ArrayList<Card> dealersCard = new ArrayList<Card>();
-		ArrayList<Card> playerCard = new ArrayList<Card>();
-		
-		for(int i=0;i<startWithTwoCard;i++) {
-		CardDraw.cardDraw(dealersCard, cardDeck);
-		CardDraw.cardDraw(playerCard, cardDeck);
-		}
+		ArrayList<Card> dealersCard = CardDraw.startingDraw(cardDeck);
+		ArrayList<Card> playerCard = CardDraw.startingDraw(cardDeck);
 		
 		System.out.println("µô·¯ Ä«µå");
 		for(Card card : dealersCard) {
@@ -52,7 +46,7 @@ public class Starter {
 			}
 			
 			if(PointCalculator.pointCalculating(playerCard)>21) {
-				System.out.println("ÃÑÇÕ"+PointCalculator.pointCalculating(playerCard)+"·Î ¹ö½ºÆ®µÊ");
+				System.out.println("ÃÑÇÕ "+PointCalculator.pointCalculating(playerCard)+" ¹ö½ºÆ®µÊ");
 				break;
 			}
 		}
@@ -67,5 +61,7 @@ public class Starter {
 		}
 		
 	}
+	
+	
 
 }

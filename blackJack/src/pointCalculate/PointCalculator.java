@@ -32,7 +32,7 @@ public class PointCalculator {
 
 	}
 	
-	public boolean isBlackJacked(ArrayList<Card> cardsInHand) {
+	public static boolean isBlackJacked(ArrayList<Card> cardsInHand) {
 		boolean isBlackJacked = false;
 		
 		if(cardsInHand.get(0).getName().equals("A")) {
