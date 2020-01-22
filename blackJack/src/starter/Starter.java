@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import card.Card;
+import card.Name;
 import cardDraw.CardDraw;
 import dealer.Dealing;
 import deckMaker.DeckMaker;
@@ -14,6 +15,7 @@ import shuffle.Shuffling;
 public class Starter {
 
 	public static void main(String[] args) {
+		
 		ArrayList<Card> cardDeck = DeckMaker.deckMaker();
 		
 		cardDeck = Shuffling.shuffling(cardDeck);
@@ -59,9 +61,7 @@ public class Starter {
 		for(Card card : dealersCard) {
 			System.out.println(card);
 		}
-		
+
 	}
 	
-	
-
 }
