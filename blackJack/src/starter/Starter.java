@@ -23,41 +23,41 @@ public class Starter {
 		ArrayList<Card> dealersCard = CardDraw.startingDraw(cardDeck);
 		ArrayList<Card> playerCard = CardDraw.startingDraw(cardDeck);
 		
-		System.out.println("µô·¯ Ä«µå");
+		System.out.println("ë”œëŸ¬ì¹´ë“œ");
 		for(Card card : dealersCard) {
 			System.out.println(card);
 		}
-		System.out.println("³»Ä«µå");
+		System.out.println("í”Œë ˆì´ì–´ì¹´ë“œ");
 		for(Card card : playerCard) {
 			System.out.println(card);
 		}
 		
 		Scanner scan = new Scanner(System.in);
 		while(true) {
-			System.out.println("Ä«µå¸¦ ¹ŞÀ¸·Á¸é 1 ¸ØÃß·Á¸é0");
+			System.out.println("ì¹´ë“œë¥¼ ë°›ìœ¼ë ¤ë©´ 1 ë©ˆì¶”ë ¤ë©´0");
 			
 			int i = scan.nextInt();
 			if(i==0) {
-				System.out.println("±×¸¸¹Ş±â ´©¸§");
+				System.out.println("ê·¸ë§Œë°›ìŠµë‹ˆë‹¤.");
 				break;
 			}
 			CardDraw.cardDraw(playerCard, cardDeck);
-			System.out.println("ÇöÀç ÇÃ·¹ÀÌ¾î Ä«µå");
+			System.out.println("í˜„ì¬ í”Œë ˆì´ì–´ ì¹´ë“œ");
 			for(Card card : playerCard) {
 				System.out.println(card);
 			}
 			
 			if(PointCalculator.pointCalculating(playerCard)>21) {
-				System.out.println("ÃÑÇÕ "+PointCalculator.pointCalculating(playerCard)+" ¹ö½ºÆ®µÊ");
+				System.out.println("ì´í•© "+PointCalculator.pointCalculating(playerCard)+" ë¡œ ë²„ìŠ¤íŠ¸ë¨");
 				break;
 			}
 		}
 		
 		scan.close();
 		
-		System.out.print("µô·¯Á¡¼ö´Â"+Dealing.dealing(dealersCard, cardDeck));
-		System.out.println(" ÇÃ·¹ÀÌ¾î Á¡¼ö´Â "+PointCalculator.pointCalculating(playerCard));
-		System.out.println("µô·¯ ÃÖÁ¾ Ä«µå");
+		System.out.print("ë”œëŸ¬ì ìˆ˜"+Dealing.dealing(dealersCard, cardDeck));
+		System.out.println(" í”Œë ˆì´ì–´ì ìˆ˜ "+PointCalculator.pointCalculating(playerCard));
+		System.out.println("ë”œëŸ¬ì¹´ë“œ");
 		for(Card card : dealersCard) {
 			System.out.println(card);
 		}
